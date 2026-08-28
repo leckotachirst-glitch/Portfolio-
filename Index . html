@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carter LECKOTA - Développeur Python & Web</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-size: 24px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h3 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #667eea;
+            text-align: center;
+        }
+
+        /* Compétences */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .skill-card h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .skill-card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin: 5px;
+        }
+
+        /* Projets */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .project-image {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-content h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .project-content p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .tech-used {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        /* Contact */
+        .contact-section {
+            background: #f8f9fa;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <h1>Carter LECKOTA</h1>
+            <ul>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Développeur Python & Web</h2>
+            <p>Passionné par la programmation et les solutions numériques innovantes</p>
+            <p>🌍 Trilingue: Français | Anglais | Espagnol</p>
+            <a href="#contact" class="btn">Démarrer un projet</a>
+        </div>
+    </section>
+
+    <!-- À propos -->
+    <section id="about">
+        <h3>À propos de moi</h3>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p style="font-size: 16px; color: #666; line-height: 1.8;">
+                Je suis un développeur passionné basé à Port-Gentil, Gabon. 
+                Je crée des solutions numériques efficaces en Python et développement web. 
+                Avec ma maîtrise de trois langues, je suis capable de collaborer avec des équipes 
+                internationales et de servir une clientèle diversifiée.
+            </p>
+        </div>
+    </section>
+
+    <!-- Compétences -->
+    <section id="skills">
+        <h3>Compétences</h3>
+        <div class="skills-container">
+            <div class="skill-card">
+                <h4>🐍 Programmation Python</h4>
+                <p>Scripts, automatisation, web scraping, data processing</p>
+                <div>
+                    <span class="badge">Python</span>
+                    <span class="badge">Automatisation</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h4>🌐 Développement Web</h4>
+                <p>HTML, CSS, design responsive, sites modernes</p>
+                <div>
+                    <span class="badge">HTML</span>
+                    <span class="badge">CSS</span>
+                    <span class="badge">Responsive</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h4>🌍 Langues</h4>
+                <p>Communication multilingue et localization</p>
+                <div>
+                    <span class="badge">Français</span>
+                    <span class="badge">Anglais</span>
+                    <span class="badge">Espagnol</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projets -->
+    <section id="projects">
+        <h3>Projets Récents</h3>
+        <div class="projects-container">
+            <div class="project-card">
+                <div class="project-image">🤖</div>
+                <div class="project-content">
+                    <h4>Bot d'Automatisation</h4>
+                    <p>Script Python pour automatiser les tâches répétitives et améliorer la productivité</p>
+                    <div class="tech-used">
+                        <span class="badge">Python</span>
+                        <span class="badge">Automatisation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">🌐</div>
+                <div class="project-content">
+                    <h4>Site Portfolio Responsive</h4>
+                    <p>Design moderne et responsive adapté à tous les appareils, avec UX optimisée</p>
+                    <div class="tech-used">
+                        <span class="badge">HTML</span>
+                        <span class="badge">CSS</span>
+                        <span class="badge">Responsive</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">📊</div>
+                <div class="project-content">
+                    <h4>Scraper de Données</h4>
+                    <p>Outil Python pour extraire et traiter des données de sources web</p>
+                    <div class="tech-used">
+                        <span class="badge">Python</span>
+                        <span class="badge">Web Scraping</span>
+                        <span class="badge">Data</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact-section">
+        <h3>Contactez-moi</h3>
+        <div class="contact-form">
+            <p style="text-align: center; margin-bottom: 30px; color: #666;">
+                Intéressé par un projet? Envoyez-moi un message!
+            </p>
+            <div class="form-group">
+                <label for="name">Votre nom</label>
+                <input type="text" id="name" placeholder="Votre nom">
+            </div>
+            <div class="form-group">
+                <label for="email">Votre email</label>
+                <input type="email" id="email" placeholder="votre@email.com">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="Décrivez votre projet..."></textarea>
+            </div>
+            <button class="btn" style="width: 100%; background: #667eea; color: white;">Envoyer</button>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <p style="color: #666; margin-bottom: 15px;">Ou contactez-moi directement:</p>
+                <p style="font-size: 16px;">
+                    📧 <strong>Email:</strong> leckotachirst@gmail.com
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+        </div>
+        <p>&copy; 2024 Carter LECKOTA. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
